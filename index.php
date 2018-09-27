@@ -1,84 +1,146 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
 <?php
-    $header = "<h1>minimalistica</h1>";
-    $title = "<title>minimalistica</title>";
-    $date = date("Y");
-?>
-<head>
-	<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-	<meta name="author" content="Luka Cvrk (www.solucija.com)" />
-	<link rel="stylesheet" href="css/main.css" type="text/css" />
-	<?= $title ?>
-</head>
-<body>
-	<div id="content">
-		<?= $header ?>
-		<ul id="menu">
-			<li><a href="#">home</a></li>
-			<li><a href="#">archive</a></li>
-			<li><a href="#">contact</a></li>
-		</ul>
-	
-		<div class="post">
-			<div class="details">
-				<h2><a href="#">Nunc commodo euismod massa quis vestibulum</a></h2>
-				<p class="info">posted 3 hours ago in <a href="#">general</a></p>
-			
-			</div>
-			<div class="body">
-				<p>Nunc eget nunc libero. Nunc commodo euismod massa quis vestibulum. Proin mi nibh, dignissim a pellentesque at, ultricies sit amet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque vel lorem eu libero laoreet facilisis. Aenean placerat, ligula quis placerat iaculis, mi magna luctus nibh, adipiscing pretium erat neque vitae augue. Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at ipsum.</p>
-			</div>
-			<div class="x"></div>
-		</div>
-		
-		<div class="col">
-			<h3><a href="#">Ut enim risus rhoncus</a></h3>
-			<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>
-			<p>&not; <a href="#">read more</a></p>
-		</div>
-		<div class="col">
-			<h3><a href="#">Maecenas iaculis leo</a></h3>
-			<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>
-			<p>&not; <a href="#">read more</a></p>
-		</div>
-		<div class="col last">
-			<h3><a href="#">Quisque consectetur odio</a></h3>
-			<p>Quisque consectetur odio ut sem semper commodo. Maecenas iaculis leo a ligula euismod condimentum. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Ut enim risus, rhoncus sit amet ultricies vel, aliquet ut dolor. Duis iaculis urna vel massa ultricies suscipit. Phasellus diam sapien, fermentum a eleifend non, luctus non augue. Quisque scelerisque purus quis eros sollicitudin gravida. Aliquam erat volutpat. Donec a sem consequat tortor posuere dignissim sit amet at.</p>
-			<p>&not; <a href="#">read more</a></p>
-		</div>
-		
-		<div id="footer">
-			<p>Copyright &copy <?= $date ?>; <em>minimalistica</em> &middot; Design: Luka Cvrk, <a href="http://www.solucija.com/" title="Free CSS Templates">Solucija</a></p>
-		</div>	
-	</div>
-</body>
-</html>
+//Exercise 1
+$a = mt_rand(-100000, 100000);
+$b = mt_rand(-100000, 100000);
 
+echo "$a <br>";
+echo "$b <br>";
 
-<?php
-/* 
-// Exercise 1
-$a = 5;
-$b = '05';
+if ($a>=0 && $b>=0)
+    echo "Разность чисел $a и $b составляет: " . ($a - $b);
 
-var_dump($a == $b); $b содержит число, начинающееся с 0 - значит оно дано в восьмеричной СС. При переводе 05 в десятичную СС получаем 5 (0*8**1 + 5*8**0) - поэтому сравнение значений этих переменных PHP определяет как true
+elseif ($a<0 && $b<0)
+    echo "Произведение чисел $a и $b составляет: " . $a * $b;
+    
+else
+    echo "Сумма чисел $a и $b составляет: " . ($a + $b);
 
-var_dump((int)'012345'); строка '012345' приводится к целому числу, поэтому 0 опускается и в итоге остаётся целое число 12345 
+echo "<br><br><br>";
+//Exercise 2
 
-var_dump((float)123.0 === (int)123.0); При одинковых значениях внутри функции var_dump оказываются данные разного типа: слева -  число с плавающей точкой, а справа - целое число - поэтому в итоге получем false 
+$a = rand(0,15);
+echo $a . "<br>";
 
-var_dump((int)0 === (int)'Hello, world'); Слева от знака сравнения получется целое число 0. Справа - к целому числу приводится строка, так как строка начинается с буквы, то она преобразуется в целое число 0. В итоге сравниваются данные одного типа (integer) и значени (0), поэтому PHP определяет это выражение как true 
+switch ($a){
+    case 0:
+        echo "<br>" . $a++;
+    case 1:
+        echo "<br>" . $a++;
+    case 2:
+        echo "<br>" . $a++;
+    case 3:
+        echo "<br>" . $a++;
+    case 4:
+        echo "<br>" . $a++;
+    case 5:
+        echo "<br>" . $a++;
+    case 6:
+        echo "<br>" . $a++;
+    case 7:
+        echo "<br>" . $a++;
+    case 8:
+        echo "<br>" . $a++;
+    case 9:
+        echo "<br>" . $a++;
+    case 10:
+        echo "<br>" . $a++;
+    case 11:
+        echo "<br>" . $a++;
+    case 12:
+        echo "<br>" . $a++;
+    case 13:
+        echo "<br>" . $a++;
+    case 14:
+        echo "<br>" . $a++;
+    case 15:
+        echo "<br>" . $a;         
+}
 
-// Exercise 5
-$c = 1;
-$d = 2;
+echo "<br><br><br>";
+//Exercise 3
 
-$c = $c + $d;
-$d = $c - $d;
-$c = $c - $d;
+function sum($arg1, $arg2){
+    return $arg1 + $arg2;
+}
 
-echo '<br> $c = ' . $c;
-echo '<br> $d = ' . $d;
-*/
+function dif($arg1, $arg2){
+    return $arg1 - $arg2;
+}
+
+function mult($arg1, $arg2){
+    return $arg1 * $arg2;
+}
+
+function div($arg1, $arg2){
+    if ($arg2 !=0){
+       return $arg1 / $arg2; 
+    }
+    else {
+        echo ("На ноль делить нельзя.");
+    }
+}
+//Exerise 4
+
+function mathOperation($arg1, $arg2, $operation){
+    switch ($operation){
+        case 'addition':
+            echo sum($arg1, $arg2);
+            break;
+        case 'subtraction':
+            echo dif($arg1, $arg2);
+            break;
+        case 'multiplication':
+            echo mult($arg1, $arg2);
+            break;
+        case 'division':
+            echo div($arg1, $arg2);
+            break;
+        default:
+            echo 'Неправильное название оперции.';
+            break;
+    }
+}
+
+echo mathOperation(7, 0, division);
+
+echo "<br><br><br>";
+//Exercise 6
+
+function power($val, $pow){
+    if ($pow == 0){
+        return 1;
+    }
+    else {
+        return ($val * power($val, $pow-1)); // Когда $pow достигнет 1, сработает первый if
+    }   
+}
+echo power(5, 3);
+
+echo "<br><br><br>";
+//Exercise 7
+
+$hours = date('H');
+$minutes = date('i');
+
+if ($hours >= 5 && $hours <=20){
+    $hoursEnding = "часов";
+}
+elseif ($hours == 1 || $hours ==21){
+    $hoursEnding = "час";
+}
+else {
+    $hoursEnding = "часа";
+}
+if (($minutes >= 05 && $minutes <= 20) || ($minutes >= 25 && $minutes <= 30 ) || ($minutes >= 35 && $minutes <= 40) || ($minutes >= 45 && $minutes <= 50) || ($minutes >= 55 && $minutes <=60)){
+    $minutesEnding = "минут";
+}
+elseif ($minutes == 01 || $minutes == 21 || $minutes == 31 || $minutes == 41 || $minutes == 51){
+    $minutesEnding = "минута";
+}
+else {
+    $minutesEnding = "минуты";
+}
+
+echo $hours . ' ' . $hoursEnding . ' ' . $minutes . ' ' . $minutesEnding;
+
 ?>
